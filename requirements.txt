@@ -1,0 +1,10 @@
+transformers
+torch
+evidently
+mlflow
+pandas
+scikit-learn
+prometheus_client
+fastapi
+uvicorn
+openlineage-python
