@@ -19,11 +19,18 @@ This project demonstrates monitoring and governance of:
 - Model versioning
 - Audit logging
 
+## Aligns with EU AI Act:
+
+Logging ✔
+Monitoring ✔
+Risk control ✔
+Human oversight ✔
+
 ## Run
 
 ```bash
 docker-compose up --build
-##🏗️ 1. High-Level Architecture
+## 🏗️ 1. High-Level Architecture
 ┌──────────────────────────────────────────────┐
 │ 1. Application Layer (UI + API)             │
 │  - Chat UI / Dashboard                      │
