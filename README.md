@@ -156,6 +156,26 @@ docker-compose up --build
 │  - RAG source attribution                 │
 └──────────────────────────────────────────────┘
 
+
+## 📊 Model Monitoring Architecture
+
+
+                +-----------------+
+                |  AI Model / LLM |
+                +-----------------+
+                           |
+        -----------------------------------
+        |                |                |
+   Metrics (Prom)   Drift (Evidently)   Lineage (OpenLineage)
+        |                |                |
+   +----------+     +-----------+       +-----------+
+   |Prometheus|     |Drift HTML |       | Metadata  |
+   +----------+     +-----------+       +-----------+
+        |                 |
+   +------------------------------+
+   |         Grafana             |
+   +------------------------------+
+
 ##🧩 2. Recommended Open-Source Stack
 🖥️ Application Layer
 FastAPI (backend)
