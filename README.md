@@ -37,9 +37,9 @@ Human oversight ✔
 
 ## Data Flow
 
-1.Data Source →
-2.Model Inference (LLM / AI Agent) →
-3.Metrics & Logs
+1. Data Source →
+2. Model Inference (LLM / AI Agent) →
+3. Metrics & Logs
    - Prometheus
    - OpenTelemetry
    - Custom logs
