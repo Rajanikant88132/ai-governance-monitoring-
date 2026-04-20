@@ -27,10 +27,12 @@ Risk control ✔
 Human oversight ✔
 
 ## Term	                        Meaning
-AI Model Monitoring	        Tracking model performance, drift, data quality, fairness
-AI Governance	              Policies, compliance, risk & audit logging
-AI Solution/AI Agents	      Full systems combining multiple AI components
-Open-Source Tools	          Tools with source code you can run & modify freely
+| Term                      | Meaning                                                   |
+| ------------------------- | --------------------------------------------------------- |
+| **AI Model Monitoring**   | Tracking model performance, drift, data quality, fairness |
+| **AI Governance**         | Policies, compliance, risk & audit logging                |
+| **AI Solution/AI Agents** | Full systems combining multiple AI components             |
+| **Open-Source Tools**     | Tools with source code you can run & modify freely        |
 
 ## Run
 
