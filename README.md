@@ -34,6 +34,23 @@ Human oversight ✔
 | **AI Solution/AI Agents** | Full systems combining multiple AI components             |
 | **Open-Source Tools**     | Tools with source code you can run & modify freely        |
 
+
+## Data Flow
+
+1.Data Source →
+2.Model Inference (LLM / AI Agent) →
+3.Metrics & Logs
+   - Prometheus
+   - OpenTelemetry
+   - Custom logs
+4. Governance & Audit
+ - MLflow / OpenLineage
+  -OPA policies
+5.Dashboarding & Alerts
+   - Grafana / Evidently dashboards
+   - Alert via Slack/Email
+
+     
 ## Run
 
 ```bash
