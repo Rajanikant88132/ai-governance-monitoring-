@@ -20,9 +20,9 @@ This project demonstrates monitoring and governance of:
 - Audit logging
 
 ## Run
-''' bash
-docker-compose up --build
 
+```bash
+docker-compose up --build
 ##🏗️ 1. High-Level Architecture
 ┌──────────────────────────────────────────────┐
 │ 1. Application Layer (UI + API)             │
@@ -60,14 +60,6 @@ docker-compose up --build
 │  - Langfuse trace replay                  │
 │  - RAG source attribution                 │
 └──────────────────────────────────────────────┘
-
-##Aligns with EU AI Act:
-
-Logging ✔
-Monitoring ✔
-Risk control ✔
-Human oversight ✔
-
 
 ##🧩 2. Recommended Open-Source Stack
 🖥️ Application Layer
