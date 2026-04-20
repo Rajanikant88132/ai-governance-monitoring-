@@ -20,7 +20,7 @@ This project demonstrates monitoring and governance of:
 - Audit logging
 
 ## Run
-##bash##
+''' bash
 docker-compose up --build
 
 ##🏗️ 1. High-Level Architecture
