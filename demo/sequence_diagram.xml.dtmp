@@ -1,0 +1,69 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="AI Agent Sequence Flow (OPA + MLflow)" id="0">
+    <mxGraphModel dx="1018" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Agent" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="260" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Tools" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="LLM" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="OPA" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="MLflow" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="40" width="80" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="POST /agent {query}" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Check policy" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="3" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="allow / deny" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="7" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="run(query)" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="evaluate tools" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="4" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="tool result" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="5" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="generate prompt" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="4" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="response" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="6" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="log run" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="4" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="final answer" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="4" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Response JSON" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" parent="1" source="3" target="2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="❌ Policy Violation" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;dashed=1;html=1;strokeColor=#ff0000;" parent="1" source="3" target="2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2026-04-19T00:00:00.000Z" agent="ChatGPT" version="24.7.8">
+  <diagram name="Kubernetes AI Governance Architecture">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Ingress Layer -->
+        <mxCell id="2" value="Ingress Layer&#xa;- NGINX Ingress Controller&#xa;- API Gateway (Kong / Traefik)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="500" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Namespace: Application -->
+        <mxCell id="3" value="Namespace: application&#xa;- Chat UI (React / Streamlit)&#xa;- FastAPI Backend&#xa;- Auth Service (Keycloak)" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="700" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Namespace: AI Processing -->
+        <mxCell id="4" value="Namespace: ai-processing&#xa;- LLM Gateway (OpenAI / Llama.cpp / vLLM)&#xa;- LangChain / CrewAI Agents&#xa;- RAG Service (LangChain + Vector DB)" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="280" width="700" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Vector DB + Storage -->
+        <mxCell id="5" value="Shared Data Layer&#xa;- Vector DB (Weaviate / Milvus / FAISS)&#xa;- Object Storage (MinIO / S3)&#xa;- Feature Store (optional)" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="700" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Observability -->
+        <mxCell id="6" value="Namespace: observability&#xa;- Prometheus (metrics)&#xa;- Grafana (dashboards)&#xa;- Loki (logs)&#xa;- OpenTelemetry Collector&#xa;- Langfuse (LLM tracing)" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="580" width="700" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Governance -->
+        <mxCell id="7" value="Namespace: governance&#xa;- MLflow (model registry)&#xa;- Evidently AI (drift/bias)&#xa;- Open Policy Agent (OPA)&#xa;- DVC (data versioning)" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="750" width="700" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Explainability -->
+        <mxCell id="8" value="Namespace: explainability&#xa;- SHAP / LIME service&#xa;- LLM explanation service&#xa;- Trace replay (Langfuse)&#xa;- RAG citation service" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="910" width="700" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- CI/CD -->
+        <mxCell id="9" value="CI/CD Layer&#xa;- ArgoCD (GitOps)&#xa;- Tekton / GitHub Actions&#xa;- Helm Charts" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="1070" width="700" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="10" style="endArrow=block;html=1;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" style="endArrow=block;html=1;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" style="endArrow=block;html=1;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="14" style="endArrow=block;html=1;" edge="1" parent="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" style="endArrow=block;html=1;" edge="1" parent="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="16" style="endArrow=block;html=1;" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

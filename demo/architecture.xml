@@ -1,0 +1,53 @@
+<mxfile host="app.diagrams.net" modified="2026-04-19T00:00:00.000Z" agent="ChatGPT" version="24.7.8">
+  <diagram name="AI Monitoring & Governance Architecture">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Layer 1 -->
+        <mxCell id="2" value="1. Application Layer (UI + API)&#xa;- Chat UI / Dashboard&#xa;- REST / FastAPI Backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="540" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 2 -->
+        <mxCell id="3" value="2. AI Processing Layer&#xa;- LLM (OpenAI / Llama / Mistral)&#xa;- AI Agents (LangChain / CrewAI)&#xa;- RAG Pipeline (optional)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="540" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 3 -->
+        <mxCell id="4" value="3. Monitoring & Observability Layer&#xa;- Langfuse / LangSmith (traces)&#xa;- Prometheus (metrics)&#xa;- Grafana (dashboards)&#xa;- OpenTelemetry (tracing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="540" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 4 -->
+        <mxCell id="5" value="4. Governance & Compliance Layer&#xa;- MLflow (model registry)&#xa;- Evidently AI (drift/bias)&#xa;- Open Policy Agent (OPA)&#xa;- DVC (data/version control)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="160" y="460" width="540" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Layer 5 -->
+        <mxCell id="6" value="5. Explainability Layer&#xa;- SHAP / LIME (model explainability)&#xa;- LLM explanation prompts&#xa;- Langfuse trace replay&#xa;- RAG source attribution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="160" y="620" width="540" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="7" style="endArrow=block;html=1;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="8" style="endArrow=block;html=1;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="9" style="endArrow=block;html=1;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="10" style="endArrow=block;html=1;" edge="1" parent="1" source="5" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

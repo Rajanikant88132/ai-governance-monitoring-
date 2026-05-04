@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" modified="2026-04-19T00:00:00.000Z" agent="ChatGPT" version="24.7.8">
+  <diagram name="AI Agent Sequence (OPA + MLflow Correct UML)">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Lifelines -->
+        <mxCell id="2" value="User" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="3" value="API" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="4" value="Agent" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="5" value="Tools" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="6" value="LLM" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="7" value="OPA" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="8" value="MLflow" style="shape=umlLifeline;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="40" width="80" height="800" as="geometry"/>
+        </mxCell>
+
+        <!-- Messages -->
+
+        <mxCell id="9" value="POST /agent {query}" edge="1" parent="1" source="2" target="3"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="10" value="Check query policy" edge="1" parent="1" source="3" target="7"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="11" value="allow / deny" edge="1" parent="1" source="7" target="3"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ALT FRAME (allowed / denied) -->
+        <mxCell id="12" value="alt [allowed]" style="rounded=0;dashed=1;strokeColor=#000000;html=1;fillColor=none;"
+                vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="650" height="420" as="geometry"/>
+        </mxCell>
+
+        <!-- Allowed flow -->
+        <mxCell id="13" value="run(query)" edge="1" parent="1" source="3" target="4"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="14" value="evaluate tools" edge="1" parent="1" source="4" target="5"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="15" value="result" edge="1" parent="1" source="5" target="4"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="16" value="generate" edge="1" parent="1" source="4" target="6"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="17" value="response" edge="1" parent="1" source="6" target="4"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="18" value="log run" edge="1" parent="1" source="4" target="8"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="19" value="final answer" edge="1" parent="1" source="4" target="3"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Denied flow (inside alt frame conceptually) -->
+        <mxCell id="20" value="❌ Policy Violation" edge="1" parent="1" source="3" target="2"
+                style="endArrow=block;strokeColor=#ff0000;dashed=1;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Final response -->
+        <mxCell id="21" value="Response JSON" edge="1" parent="1" source="3" target="2"
+                style="endArrow=block;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
